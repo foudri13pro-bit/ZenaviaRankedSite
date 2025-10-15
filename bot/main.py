@@ -10,9 +10,12 @@ print("🚀 Lancement du bot Z.E.N.A...")
 TOKEN = os.getenv("DISCORD_TOKEN")
 API_BASE = "https://z-e-n-a-ranked.onrender.com/api"
 
+# 🔍 Test temporaire : vérifier si Render lit bien la variable d'environnement
 if not TOKEN:
-    print("❌ ERREUR : le token Discord n’est pas défini (DISCORD_TOKEN manquant)")
+    print("❌ Render ne trouve pas la variable DISCORD_TOKEN")
     exit(1)
+else:
+    print(f"✅ Variable DISCORD_TOKEN trouvée ({len(TOKEN)} caractères)")
 
 intents = discord.Intents.default()
 intents.message_content = True
